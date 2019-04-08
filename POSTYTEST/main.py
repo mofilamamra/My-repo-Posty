@@ -52,8 +52,8 @@ def post_update(id):
         }
         post_store.update(id, update_fields)
 
-    return redirect(url_for('home'))
-    if request.method == 'GET':
+        return redirect(url_for('home'))
+    elif request.method == 'GET':
         post = post_store.get_by_id(id)
         print('hi')
         return render_template('post-update.html', post=post)
